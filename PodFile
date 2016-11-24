@@ -8,8 +8,6 @@ else
     FMDB = "FMDB" 
 end
 
-
-
 abstract_target 'base' do 
     pod FMDB, '= 2.6'
     pod 'CocoaLumberjack', '~> 2.0'
