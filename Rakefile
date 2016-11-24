@@ -39,12 +39,12 @@ end
 
 desc "pod update"
 task :podupdatetests do
-  sh "pod update -v"
+  sh "pod install && pod update -v"
 end
 
 desc "sample pod update" 
 task :podupdatesample do
-  sh "cd Project && pod update -v"
+  sh "cd Project && pod install && pod update -v"
 end
 
 desc "pod update"
