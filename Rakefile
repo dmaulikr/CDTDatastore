@@ -29,7 +29,7 @@ task :test => [:testios, :testosx] do
 end
 
 desc "Task for travis"
-task :travis => [:podupdate :test, :sample] do
+task :travis => [:podupdate, :test, :sample] do
   sh "pod lib lint --allow-warnings --verbose | xcpretty; exit ${PIPESTATUS[0]}"
 end
 
