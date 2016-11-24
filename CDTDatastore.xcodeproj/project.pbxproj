@@ -346,6 +346,17 @@
 		9873857A1C47B49800937212 /* CDTDatastoreOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 987383ED1C47B38800937212 /* CDTDatastoreOSX.framework */; };
 		987385FC1C49659200937212 /* CDTDatastore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 98F77B361C43FC9F00515CC3 /* CDTDatastore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		987386001C4D497A00937212 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 987385FF1C4D497A00937212 /* libz.tbd */; };
+		987AF7A71DE7273700577DAC /* CDTBlobEncryptedDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 987AF7A51DE7273700577DAC /* CDTBlobEncryptedDataTests.m */; };
+		987AF7A81DE7273700577DAC /* CDTBlobHandleFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 987AF7A61DE7273700577DAC /* CDTBlobHandleFactoryTests.m */; };
+		987AF7B31DE7274C00577DAC /* CDTEncryptionKeySimpleProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 987AF7A91DE7274C00577DAC /* CDTEncryptionKeySimpleProviderTests.m */; };
+		987AF7B41DE7274C00577DAC /* CDTQIndexManagerEncryptionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 987AF7AA1DE7274C00577DAC /* CDTQIndexManagerEncryptionTests.m */; };
+		987AF7B51DE7274C00577DAC /* CloudantTests+EncryptionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 987AF7AC1DE7274C00577DAC /* CloudantTests+EncryptionTests.m */; };
+		987AF7B61DE7274C00577DAC /* DatastoreEncryptionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 987AF7AD1DE7274C00577DAC /* DatastoreEncryptionTests.m */; };
+		987AF7B71DE7274C00577DAC /* DatastoreManagerEncryptionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 987AF7AE1DE7274C00577DAC /* DatastoreManagerEncryptionTests.m */; };
+		987AF7B81DE7274C00577DAC /* FMDatabase+SQLCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 987AF7B01DE7274C00577DAC /* FMDatabase+SQLCipher.m */; };
+		987AF7B91DE7274C00577DAC /* TD_DatabaseEncryptionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 987AF7B11DE7274C00577DAC /* TD_DatabaseEncryptionTests.m */; };
+		987AF7BA1DE7274C00577DAC /* TDBlobStoreEncryptionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 987AF7B21DE7274C00577DAC /* TDBlobStoreEncryptionTests.m */; };
+		987AF7BC1DE7275800577DAC /* emptynonencryptedindex.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 987AF7BB1DE7275800577DAC /* emptynonencryptedindex.sqlite */; };
 		988D2E621DA6B13900E05262 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 988D2E611DA6B13900E05262 /* main.m */; };
 		988D2E651DA6B13900E05262 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 988D2E641DA6B13900E05262 /* AppDelegate.m */; };
 		988D2E681DA6B13900E05262 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 988D2E671DA6B13900E05262 /* ViewController.m */; };
@@ -743,6 +754,19 @@
 		987385201C47B45400937212 /* CDTDatastoreReplicationAcceptanceTestsOSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CDTDatastoreReplicationAcceptanceTestsOSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		987385761C47B45600937212 /* CDTDatastoreTestsOSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CDTDatastoreTestsOSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		987385FF1C4D497A00937212 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		987AF7A51DE7273700577DAC /* CDTBlobEncryptedDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTBlobEncryptedDataTests.m; sourceTree = "<group>"; };
+		987AF7A61DE7273700577DAC /* CDTBlobHandleFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTBlobHandleFactoryTests.m; sourceTree = "<group>"; };
+		987AF7A91DE7274C00577DAC /* CDTEncryptionKeySimpleProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTEncryptionKeySimpleProviderTests.m; sourceTree = "<group>"; };
+		987AF7AA1DE7274C00577DAC /* CDTQIndexManagerEncryptionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTQIndexManagerEncryptionTests.m; sourceTree = "<group>"; };
+		987AF7AB1DE7274C00577DAC /* CloudantTests+EncryptionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CloudantTests+EncryptionTests.h"; sourceTree = "<group>"; };
+		987AF7AC1DE7274C00577DAC /* CloudantTests+EncryptionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CloudantTests+EncryptionTests.m"; sourceTree = "<group>"; };
+		987AF7AD1DE7274C00577DAC /* DatastoreEncryptionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatastoreEncryptionTests.m; sourceTree = "<group>"; };
+		987AF7AE1DE7274C00577DAC /* DatastoreManagerEncryptionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatastoreManagerEncryptionTests.m; sourceTree = "<group>"; };
+		987AF7AF1DE7274C00577DAC /* FMDatabase+SQLCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+SQLCipher.h"; sourceTree = "<group>"; };
+		987AF7B01DE7274C00577DAC /* FMDatabase+SQLCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+SQLCipher.m"; sourceTree = "<group>"; };
+		987AF7B11DE7274C00577DAC /* TD_DatabaseEncryptionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TD_DatabaseEncryptionTests.m; sourceTree = "<group>"; };
+		987AF7B21DE7274C00577DAC /* TDBlobStoreEncryptionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBlobStoreEncryptionTests.m; sourceTree = "<group>"; };
+		987AF7BB1DE7275800577DAC /* emptynonencryptedindex.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = emptynonencryptedindex.sqlite; sourceTree = "<group>"; };
 		988D2E5E1DA6B13900E05262 /* CDTDatastoreTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDTDatastoreTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		988D2E611DA6B13900E05262 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		988D2E631DA6B13900E05262 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1094,41 +1118,8 @@
 		98F77EDD1C44045000515CC3 /* ReplicatorURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplicatorURLProtocol.m; sourceTree = "<group>"; };
 		98F77EDE1C44045000515CC3 /* ReplicatorURLProtocolTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplicatorURLProtocolTester.h; sourceTree = "<group>"; };
 		98F77EDF1C44045000515CC3 /* ReplicatorURLProtocolTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplicatorURLProtocolTester.m; sourceTree = "<group>"; };
-		98F77EF71C44047600515CC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98F77EFF1C4404B700515CC3 /* emptynonencryptedindex.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = emptynonencryptedindex.sqlite; sourceTree = "<group>"; };
-		98F77F001C4404B700515CC3 /* CDTQIndexManagerEncryptionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTQIndexManagerEncryptionTests.m; sourceTree = "<group>"; };
-		98F77F011C4404B700515CC3 /* DatastoreEncryptionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatastoreEncryptionTests.m; sourceTree = "<group>"; };
-		98F77F021C4404B700515CC3 /* DatastoreManagerEncryptionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatastoreManagerEncryptionTests.m; sourceTree = "<group>"; };
-		98F77F031C4404B700515CC3 /* TD_DatabaseEncryptionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TD_DatabaseEncryptionTests.m; sourceTree = "<group>"; };
 		98F77F091C45163300515CC3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		98F77F0B1C45189600515CC3 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		98F784E01C45620300515CC3 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
-		98F784E11C45672600515CC3 /* CDTDatastoreEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDTDatastoreEncryption.h; path = CDTDatastoreEncryption/CDTDatastoreEncryption.h; sourceTree = "<group>"; };
-		98F786C31C456C5500515CC3 /* CDTBlobEncryptedDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTBlobEncryptedDataTests.m; sourceTree = "<group>"; };
-		98F786C41C456C5500515CC3 /* CDTBlobHandleFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTBlobHandleFactoryTests.m; sourceTree = "<group>"; };
-		98F786C51C456C5500515CC3 /* CDTEncryptionKeySimpleProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTEncryptionKeySimpleProviderTests.m; sourceTree = "<group>"; };
-		98F786C61C456C5500515CC3 /* CloudantSyncTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudantSyncTests.h; sourceTree = "<group>"; };
-		98F786C71C456C5500515CC3 /* CloudantSyncTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudantSyncTests.m; sourceTree = "<group>"; };
-		98F786C81C456C5500515CC3 /* CloudantTests+EncryptionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CloudantTests+EncryptionTests.h"; sourceTree = "<group>"; };
-		98F786C91C456C5500515CC3 /* CloudantTests+EncryptionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CloudantTests+EncryptionTests.m"; sourceTree = "<group>"; };
-		98F786CA1C456C5500515CC3 /* FMDatabase+SQLCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+SQLCipher.h"; sourceTree = "<group>"; };
-		98F786CB1C456C5500515CC3 /* FMDatabase+SQLCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+SQLCipher.m"; sourceTree = "<group>"; };
-		98F786CD1C456C5500515CC3 /* CDTEncryptionKeychainDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTEncryptionKeychainDataTests.m; sourceTree = "<group>"; };
-		98F786CE1C456C5500515CC3 /* CDTEncryptionKeychainManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTEncryptionKeychainManagerTests.m; sourceTree = "<group>"; };
-		98F786CF1C456C5500515CC3 /* CDTEncryptionKeychainProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTEncryptionKeychainProviderTests.m; sourceTree = "<group>"; };
-		98F786D01C456C5500515CC3 /* CDTEncryptionKeychainUtilsAESTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTEncryptionKeychainUtilsAESTests.m; sourceTree = "<group>"; };
-		98F786D11C456C5500515CC3 /* CDTEncryptionKeychainUtilsPBKDF2Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTEncryptionKeychainUtilsPBKDF2Tests.m; sourceTree = "<group>"; };
-		98F786D21C456C5500515CC3 /* TDBlobStoreEncryptionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBlobStoreEncryptionTests.m; sourceTree = "<group>"; };
-		98F786E11C456DA000515CC3 /* CDTHelperFixedKeyProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDTHelperFixedKeyProvider.h; sourceTree = "<group>"; };
-		98F786E21C456DA000515CC3 /* CDTHelperFixedKeyProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTHelperFixedKeyProvider.m; sourceTree = "<group>"; };
-		98F786E31C456DA000515CC3 /* CDTHelperOneUseKeyProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDTHelperOneUseKeyProvider.h; sourceTree = "<group>"; };
-		98F786E41C456DA000515CC3 /* CDTHelperOneUseKeyProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTHelperOneUseKeyProvider.m; sourceTree = "<group>"; };
-		98F786E71C45732400515CC3 /* CloudantTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudantTests.h; sourceTree = "<group>"; };
-		98F786E81C45732400515CC3 /* CloudantTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudantTests.m; sourceTree = "<group>"; };
-		98F786EA1C4658A500515CC3 /* emptyencryptedindex.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = emptyencryptedindex.sqlite; sourceTree = "<group>"; };
-		98F786EC1C4658E800515CC3 /* emptyencrypteddb.touchdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = emptyencrypteddb.touchdb; sourceTree = "<group>"; };
-		98F786EE1C46597A00515CC3 /* schema100_1Bonsai_2Lorem.touchdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = schema100_1Bonsai_2Lorem.touchdb; sourceTree = "<group>"; };
-		98F786F01C465BC500515CC3 /* lorem.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lorem.txt; sourceTree = "<group>"; };
 		A15735F4EFD5449302A3D38A /* Pods_CDTDatastoreEncryptionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CDTDatastoreEncryptionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E4A1E21382536128103DE8 /* Pods-CDTDatastoreTestsOSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDTDatastoreTestsOSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-CDTDatastoreTestsOSX/Pods-CDTDatastoreTestsOSX.release.xcconfig"; sourceTree = "<group>"; };
 		BB9291137C84942C8C031D3B /* Pods-CDTDatastoreEncryptionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDTDatastoreEncryptionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDTDatastoreEncryptionTests/Pods-CDTDatastoreEncryptionTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1310,11 +1301,9 @@
 		98F77B2C1C43FC9F00515CC3 = {
 			isa = PBXGroup;
 			children = (
-				98F784DF1C45615300515CC3 /* CDTDatastoreEncryption */,
 				98F77B381C43FC9F00515CC3 /* CDTDatastore */,
 				98F77B441C43FC9F00515CC3 /* CDTDatastoreTests */,
 				98F77D2D1C44028700515CC3 /* CDTDatastoreReplicationAcceptanceTests */,
-				98F77EF41C44047600515CC3 /* CDTDatastoreEncryptionTests */,
 				988D2E5F1DA6B13900E05262 /* CDTDatastoreTestApp */,
 				988D2E791DA6B13900E05262 /* CDTDatastoreTestAppTests */,
 				988D2E841DA6B13900E05262 /* CDTDatastoreTestAppUITests */,
@@ -1794,6 +1783,7 @@
 		98F77DFF1C44044000515CC3 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				987AF7BB1DE7275800577DAC /* emptynonencryptedindex.sqlite */,
 				98F77E001C44044000515CC3 /* bonsai-boston.jpg */,
 				98F77E011C44044000515CC3 /* emptyencrypteddb.touchdb */,
 				98F77E021C44044000515CC3 /* emptyencryptedindex.sqlite */,
@@ -1807,6 +1797,8 @@
 		98F77E061C44044000515CC3 /* Attachments */ = {
 			isa = PBXGroup;
 			children = (
+				987AF7A51DE7273700577DAC /* CDTBlobEncryptedDataTests.m */,
+				987AF7A61DE7273700577DAC /* CDTBlobHandleFactoryTests.m */,
 				98F77E071C44044000515CC3 /* AttachmentCRUD.m */,
 				98F77E081C44044000515CC3 /* CDTBlobDataTests.m */,
 			);
@@ -1824,6 +1816,16 @@
 		98F77E2B1C44044000515CC3 /* Encryption */ = {
 			isa = PBXGroup;
 			children = (
+				987AF7A91DE7274C00577DAC /* CDTEncryptionKeySimpleProviderTests.m */,
+				987AF7AA1DE7274C00577DAC /* CDTQIndexManagerEncryptionTests.m */,
+				987AF7AB1DE7274C00577DAC /* CloudantTests+EncryptionTests.h */,
+				987AF7AC1DE7274C00577DAC /* CloudantTests+EncryptionTests.m */,
+				987AF7AD1DE7274C00577DAC /* DatastoreEncryptionTests.m */,
+				987AF7AE1DE7274C00577DAC /* DatastoreManagerEncryptionTests.m */,
+				987AF7AF1DE7274C00577DAC /* FMDatabase+SQLCipher.h */,
+				987AF7B01DE7274C00577DAC /* FMDatabase+SQLCipher.m */,
+				987AF7B11DE7274C00577DAC /* TD_DatabaseEncryptionTests.m */,
+				987AF7B21DE7274C00577DAC /* TDBlobStoreEncryptionTests.m */,
 			);
 			path = Encryption;
 			sourceTree = "<group>";
@@ -1889,85 +1891,6 @@
 				98F77ED11C44045000515CC3 /* InfoPlist.strings */,
 			);
 			path = en.lproj;
-			sourceTree = "<group>";
-		};
-		98F77EF41C44047600515CC3 /* CDTDatastoreEncryptionTests */ = {
-			isa = PBXGroup;
-			children = (
-				98F786E71C45732400515CC3 /* CloudantTests.h */,
-				98F786E81C45732400515CC3 /* CloudantTests.m */,
-				98F786E01C456DA000515CC3 /* Helpers */,
-				98F786C21C456C5500515CC3 /* Attachments */,
-				98F786C51C456C5500515CC3 /* CDTEncryptionKeySimpleProviderTests.m */,
-				98F786C61C456C5500515CC3 /* CloudantSyncTests.h */,
-				98F786C71C456C5500515CC3 /* CloudantSyncTests.m */,
-				98F786C81C456C5500515CC3 /* CloudantTests+EncryptionTests.h */,
-				98F786C91C456C5500515CC3 /* CloudantTests+EncryptionTests.m */,
-				98F786CA1C456C5500515CC3 /* FMDatabase+SQLCipher.h */,
-				98F786CB1C456C5500515CC3 /* FMDatabase+SQLCipher.m */,
-				98F786CC1C456C5500515CC3 /* Keychain */,
-				98F786D21C456C5500515CC3 /* TDBlobStoreEncryptionTests.m */,
-				98F77EFE1C4404B700515CC3 /* Assets */,
-				98F77F001C4404B700515CC3 /* CDTQIndexManagerEncryptionTests.m */,
-				98F77F011C4404B700515CC3 /* DatastoreEncryptionTests.m */,
-				98F77F021C4404B700515CC3 /* DatastoreManagerEncryptionTests.m */,
-				98F77F031C4404B700515CC3 /* TD_DatabaseEncryptionTests.m */,
-				98F77EF71C44047600515CC3 /* Info.plist */,
-			);
-			path = CDTDatastoreEncryptionTests;
-			sourceTree = "<group>";
-		};
-		98F77EFE1C4404B700515CC3 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				98F786F01C465BC500515CC3 /* lorem.txt */,
-				98F786EE1C46597A00515CC3 /* schema100_1Bonsai_2Lorem.touchdb */,
-				98F786EC1C4658E800515CC3 /* emptyencrypteddb.touchdb */,
-				98F786EA1C4658A500515CC3 /* emptyencryptedindex.sqlite */,
-				98F77EFF1C4404B700515CC3 /* emptynonencryptedindex.sqlite */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		98F784DF1C45615300515CC3 /* CDTDatastoreEncryption */ = {
-			isa = PBXGroup;
-			children = (
-				98F784E01C45620300515CC3 /* Property List.plist */,
-				98F784E11C45672600515CC3 /* CDTDatastoreEncryption.h */,
-			);
-			name = CDTDatastoreEncryption;
-			sourceTree = "<group>";
-		};
-		98F786C21C456C5500515CC3 /* Attachments */ = {
-			isa = PBXGroup;
-			children = (
-				98F786C31C456C5500515CC3 /* CDTBlobEncryptedDataTests.m */,
-				98F786C41C456C5500515CC3 /* CDTBlobHandleFactoryTests.m */,
-			);
-			path = Attachments;
-			sourceTree = "<group>";
-		};
-		98F786CC1C456C5500515CC3 /* Keychain */ = {
-			isa = PBXGroup;
-			children = (
-				98F786CD1C456C5500515CC3 /* CDTEncryptionKeychainDataTests.m */,
-				98F786CE1C456C5500515CC3 /* CDTEncryptionKeychainManagerTests.m */,
-				98F786CF1C456C5500515CC3 /* CDTEncryptionKeychainProviderTests.m */,
-				98F786D01C456C5500515CC3 /* CDTEncryptionKeychainUtilsAESTests.m */,
-				98F786D11C456C5500515CC3 /* CDTEncryptionKeychainUtilsPBKDF2Tests.m */,
-			);
-			path = Keychain;
-			sourceTree = "<group>";
-		};
-		98F786E01C456DA000515CC3 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				98F786E11C456DA000515CC3 /* CDTHelperFixedKeyProvider.h */,
-				98F786E21C456DA000515CC3 /* CDTHelperFixedKeyProvider.m */,
-				98F786E31C456DA000515CC3 /* CDTHelperOneUseKeyProvider.h */,
-				98F786E41C456DA000515CC3 /* CDTHelperOneUseKeyProvider.m */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		BAB93F7036FB187271145C0F /* Pods */ = {
@@ -2583,6 +2506,7 @@
 				98F77E741C44044000515CC3 /* schema100_1Bonsai_2Lorem.touchdb in Resources */,
 				98F77E711C44044000515CC3 /* emptyencrypteddb.touchdb in Resources */,
 				98F77E731C44044000515CC3 /* lorem.txt in Resources */,
+				987AF7BC1DE7275800577DAC /* emptynonencryptedindex.sqlite in Resources */,
 				98F77E701C44044000515CC3 /* bonsai-boston.jpg in Resources */,
 				98F77EBE1C44044000515CC3 /* Tests-Info.plist in Resources */,
 				98F77E751C44044000515CC3 /* schema6to7upgrade.touchdb in Resources */,
@@ -3207,17 +3131,21 @@
 				980F22741CB818260075A843 /* CDTQIndexTests.m in Sources */,
 				980F22751CB818260075A843 /* CDTQIndexUpdaterTests.m in Sources */,
 				980F22761CB818260075A843 /* CDTQInvalidQuerySyntax.m in Sources */,
+				987AF7B61DE7274C00577DAC /* DatastoreEncryptionTests.m in Sources */,
 				980F22771CB818260075A843 /* CDTQPerformanceTests.m in Sources */,
 				980F22781CB818260075A843 /* CDTQQueryExecutorTests.m in Sources */,
 				980F22791CB818260075A843 /* CDTQQuerySortTests.m in Sources */,
 				980F227A1CB818260075A843 /* CDTQQuerySqlTranslatorTests.m in Sources */,
 				980F227B1CB818260075A843 /* CDTQTextSearchTests.m in Sources */,
+				987AF7B41DE7274C00577DAC /* CDTQIndexManagerEncryptionTests.m in Sources */,
 				980F227C1CB818260075A843 /* CDTQUnindexedMatcherTests.m in Sources */,
 				980F227D1CB818260075A843 /* CDTQValueExtractorTests.m in Sources */,
 				980F227F1CB818260075A843 /* CDTSessionCookieInterceptorTests.m in Sources */,
 				980F22801CB818260075A843 /* CDTURLSessionTaskTests.m in Sources */,
 				980F22811CB818260075A843 /* CDTURLSessionTests.m in Sources */,
 				98F77E8D1C44044000515CC3 /* DatastoreActions.m in Sources */,
+				987AF7BA1DE7274C00577DAC /* TDBlobStoreEncryptionTests.m in Sources */,
+				987AF7A81DE7273700577DAC /* CDTBlobHandleFactoryTests.m in Sources */,
 				987383001C47B1DD00937212 /* CDTHelperOneUseKeyProvider.m in Sources */,
 				98F77E771C44044000515CC3 /* CDTBlobDataTests.m in Sources */,
 				98F77E761C44044000515CC3 /* AttachmentCRUD.m in Sources */,
@@ -3228,21 +3156,25 @@
 				98F77EA61C44044000515CC3 /* CDTQContainsInAnyOrderMatcher.m in Sources */,
 				987382FF1C47B1DD00937212 /* CDTHelperFixedKeyProvider.m in Sources */,
 				98F77E8C1C44044000515CC3 /* CloudantTests.m in Sources */,
+				987AF7B71DE7274C00577DAC /* DatastoreManagerEncryptionTests.m in Sources */,
 				98F77EA91C44044000515CC3 /* CDTQMatcherIndexManager.m in Sources */,
 				98C367E91C91B51100C4059D /* CDTReplicationTests.m in Sources */,
 				98F77EB91C44044000515CC3 /* TDMultipartWriterTests.m in Sources */,
 				98F77EB11C44044000515CC3 /* TD_DatabaseManagerTests.m in Sources */,
 				98F77EB51C44044000515CC3 /* TDCollateJSONTests.m in Sources */,
+				987AF7B91DE7274C00577DAC /* TD_DatabaseEncryptionTests.m in Sources */,
 				98F77EAA1C44044000515CC3 /* CDTQMatcherQueryExecutor.m in Sources */,
 				98F77EB61C44044000515CC3 /* TDMiscTests.m in Sources */,
 				98F77EB21C44044000515CC3 /* TD_DatabaseTests.m in Sources */,
 				98F77E911C44044000515CC3 /* DatastoreManagerTests.m in Sources */,
 				98F77EBA1C44044000515CC3 /* TDMultiStreamWriterTests.m in Sources */,
+				987AF7B51DE7274C00577DAC /* CloudantTests+EncryptionTests.m in Sources */,
 				98F77EA71C44044000515CC3 /* CDTQEitherMatcher.m in Sources */,
 				98F77E901C44044000515CC3 /* DatastoreCRUD.m in Sources */,
 				98F77E781C44044000515CC3 /* CDTDatastoreQueryTests.m in Sources */,
 				98F77EC21C44044000515CC3 /* CDTChangedDictionaryTests.m in Sources */,
 				98F77EC01C44044000515CC3 /* CDTChangedArrayTests.m in Sources */,
+				987AF7B81DE7274C00577DAC /* FMDatabase+SQLCipher.m in Sources */,
 				98F77E921C44044000515CC3 /* DBQueryUtils.m in Sources */,
 				98F77EB31C44044000515CC3 /* TD_RevisionTests.m in Sources */,
 				98F77EB41C44044000515CC3 /* TDCanonicalJSONTests.m in Sources */,
@@ -3252,9 +3184,11 @@
 				98F77EAC1C44044000515CC3 /* CDTQSQLOnlyQueryExecutor.m in Sources */,
 				98F77E791C44044000515CC3 /* CDTFetchChangesTests.m in Sources */,
 				98F77EBB1C44044000515CC3 /* TDPusherTests.m in Sources */,
+				987AF7A71DE7273700577DAC /* CDTBlobEncryptedDataTests.m in Sources */,
 				98F77EA81C44044000515CC3 /* CDTQQueryMatcher.m in Sources */,
 				98F77E8F1C44044000515CC3 /* DatastoreConflicts.m in Sources */,
 				98F77EB81C44044000515CC3 /* TDMultipartReaderTests.m in Sources */,
+				987AF7B31DE7274C00577DAC /* CDTEncryptionKeySimpleProviderTests.m in Sources */,
 				98F77EBC1C44044000515CC3 /* TDReachabilityTests.m in Sources */,
 				98F77EB01C44044000515CC3 /* TD_DatabaseDeletionTests.m in Sources */,
 				98F77EC11C44044000515CC3 /* CDTChangedDictionaryJSONWrappingTests.m in Sources */,
