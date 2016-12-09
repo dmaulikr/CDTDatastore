@@ -681,6 +681,13 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
+		984850911DFB14A4003B1310 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98F77B2D1C43FC9F00515CC3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 988D2E5D1DA6B13900E05262;
+			remoteInfo = CDTDatastoreTestApp;
+		};
 		988D2E771DA6B13900E05262 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 98F77B2D1C43FC9F00515CC3 /* Project object */;
@@ -2317,6 +2324,7 @@
 			);
 			dependencies = (
 				98F77B431C43FC9F00515CC3 /* PBXTargetDependency */,
+				984850921DFB14A4003B1310 /* PBXTargetDependency */,
 			);
 			name = CDTDatastoreTests;
 			productName = CDTDatastoreTests;
@@ -2374,6 +2382,7 @@
 					};
 					98F77B3F1C43FC9F00515CC3 = {
 						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 988D2E5D1DA6B13900E05262;
 					};
 					98F77D2B1C44028700515CC3 = {
 						CreatedOnToolsVersion = 7.2;
@@ -3204,6 +3213,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		984850921DFB14A4003B1310 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 988D2E5D1DA6B13900E05262 /* CDTDatastoreTestApp */;
+			targetProxy = 984850911DFB14A4003B1310 /* PBXContainerItemProxy */;
+		};
 		988D2E781DA6B13900E05262 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 988D2E5D1DA6B13900E05262 /* CDTDatastoreTestApp */;
@@ -3596,6 +3610,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cloudant.CDTDatastoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CDTDatastoreTestApp.app/CDTDatastoreTestApp";
 			};
 			name = Debug;
 		};
@@ -3608,6 +3623,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cloudant.CDTDatastoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CDTDatastoreTestApp.app/CDTDatastoreTestApp";
 			};
 			name = Release;
 		};
