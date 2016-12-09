@@ -2365,6 +2365,7 @@
 				TargetAttributes = {
 					988D2E5D1DA6B13900E05262 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HZC5SDF79A;
 						ProvisioningStyle = Automatic;
 					};
 					988D2E751DA6B13900E05262 = {
@@ -3387,6 +3388,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = HZC5SDF79A;
 				INFOPLIST_FILE = CDTDatastoreTestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -3402,6 +3404,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = HZC5SDF79A;
 				INFOPLIST_FILE = CDTDatastoreTestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
