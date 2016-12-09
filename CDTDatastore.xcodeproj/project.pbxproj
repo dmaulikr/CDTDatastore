@@ -2382,6 +2382,7 @@
 					};
 					98F77B3F1C43FC9F00515CC3 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = HZC5SDF79A;
 						TestTargetID = 988D2E5D1DA6B13900E05262;
 					};
 					98F77D2B1C44028700515CC3 = {
@@ -3606,6 +3607,7 @@
 			baseConfigurationReference = C5D893F16D9AE1D27F28C6F6 /* Pods-base-tests-CDTDatastoreTests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = NO;
+				DEVELOPMENT_TEAM = HZC5SDF79A;
 				INFOPLIST_FILE = CDTDatastoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cloudant.CDTDatastoreTests;
@@ -3619,6 +3621,7 @@
 			baseConfigurationReference = 00A609A6C10F2A6835BF22B3 /* Pods-base-tests-CDTDatastoreTests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = NO;
+				DEVELOPMENT_TEAM = HZC5SDF79A;
 				INFOPLIST_FILE = CDTDatastoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cloudant.CDTDatastoreTests;
