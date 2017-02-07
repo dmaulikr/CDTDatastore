@@ -235,6 +235,8 @@ extern const TDChangesOptions kDefaultTDChangesOptions;
     design document and compile them with the TDViewCompiler. */
 - (TD_View*)compileViewNamed:(NSString*)name status:(TDStatus*)outStatus;
 
+- (void)clearPendingAttachments;
+
 @property (readonly) NSArray* allViews;
 
 - (TD_RevisionList*)changesSinceSequence:(SequenceNumber)lastSequence

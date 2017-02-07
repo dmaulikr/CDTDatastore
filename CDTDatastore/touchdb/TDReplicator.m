@@ -309,6 +309,11 @@ NSString* TDReplicatorStartedNotification = @"TDReplicatorStarted";
             dispatch_group_leave(taskGroup);
         }
     }
+
+    [self.session finishTasksAndInvalidate];
+    self.session = nil;
+    self.sessionConfigDelegate = nil;
+    self.interceptors = nil;
 }
 
 

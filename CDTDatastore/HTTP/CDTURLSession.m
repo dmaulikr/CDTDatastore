@@ -100,7 +100,7 @@ static dispatch_semaphore_t g_asyncTaskMonitor;
     return self;
 }
 
-- (void)dealloc { [self.session finishTasksAndInvalidate]; }
+- (void)finishTasksAndInvalidate { [self.session finishTasksAndInvalidate]; }
 
 - (CDTURLSessionTask *)dataTaskWithRequest:(NSURLRequest *)request
                               taskDelegate:(NSObject<CDTURLSessionTaskDelegate> *)taskDelegate

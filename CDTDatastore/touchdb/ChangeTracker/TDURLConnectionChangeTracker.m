@@ -41,6 +41,9 @@
 @property (nonatomic, strong) CDTURLSessionTask * task;
 @end
 
+static const int kChangeQueueThreshold = 500;
+static const float kChangeQueuePollingRate = 0.1f;
+
 @implementation TDURLConnectionChangeTracker
 
 - (instancetype)initWithDatabaseURL:(NSURL *)databaseURL
@@ -281,8 +284,23 @@ didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
     }
     
     [self clearConnection];
-    
-    if (restart){
+
+    if (restart) {
+        // Throttle the rate at which we get the list of changes. If we already have more than
+        // kChangeQueueThreshold changes to be processed, wait until we fall below that threshold
+        // before we get any more. Note that this is not a hard limit, and the number of changes may
+        // exceed kChangeQueueThreshold, but it won't go vastly above the threshold. This saves us
+        // from consuming large amounts of memory by allocating a TDPulledRevision for each
+        // change we are waiting to pull and keeps our peak memory usage much smaller during
+        // pulls of large numbers of changes.
+        if ([_client respondsToSelector:@selector(sizeOfChangeQueue)]) {
+            while ([_client sizeOfChangeQueue] > kChangeQueueThreshold &&
+                   [[NSRunLoop currentRunLoop]
+                          runMode:NSDefaultRunLoopMode
+                       beforeDate:[NSDate dateWithTimeIntervalSinceNow:kChangeQueuePollingRate]])
+                ;
+        }
+
         [self start];  // Next poll...
     } else {
         [self stopped];

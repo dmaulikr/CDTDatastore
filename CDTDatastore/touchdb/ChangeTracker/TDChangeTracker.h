@@ -23,6 +23,7 @@
 - (void)changeTrackerReceivedChange:(NSDictionary*)change;
 - (void)changeTrackerReceivedChanges:(NSArray*)changes;
 - (void)changeTrackerStopped:(TDChangeTracker*)tracker;
+- (NSUInteger)sizeOfChangeQueue;
 @end
 
 typedef enum TDChangeTrackerMode { kOneShot, kLongPoll, kContinuous } TDChangeTrackerMode;

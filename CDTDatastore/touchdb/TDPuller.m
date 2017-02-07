@@ -302,6 +302,7 @@ static NSString* joinQuotedEscaped(NSArray* strings);
     if (!_caughtUp) [self asyncTasksFinished:1];  // balances -asyncTaskStarted in -beginReplicating
 }
 
+- (NSUInteger)sizeOfChangeQueue { return _revsToPull.count; }
 #pragma mark - REVISION CHECKING:
 
 // Process a bunch of remote revisions from the _changes feed at once
@@ -646,6 +647,8 @@ static NSString* joinQuotedEscaped(NSArray* strings);
                 [_pendingSequences removeSequence:fakeSequence];
             }
         }
+
+        [_db clearPendingAttachments];
 
         CDTLogVerbose(CDTREPLICATION_LOG_CONTEXT, @"%@ finished inserting %u revisions", self,
                    (unsigned)downloads.count);

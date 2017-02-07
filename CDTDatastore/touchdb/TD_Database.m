@@ -1538,4 +1538,5 @@ const TDChangesOptions kDefaultTDChangesOptions = {UINT_MAX, 0, NO, NO, YES};
     return queue;
 }
 
+- (void)clearPendingAttachments { _pendingAttachmentsByDigest = nil; }
 @end
