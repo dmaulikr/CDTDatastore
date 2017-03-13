@@ -3,6 +3,8 @@
 //  TouchDB
 //
 //  Created by Jens Alfke on 12/2/11.
+//  Copyright © 2017 IBM Corp. All rights reserved.
+//
 //  Copyright (c) 2011 Couchbase, Inc. All rights reserved.
 //
 //  Modifications for this distribution by Cloudant, Inc., Copyright (c) 2014 Cloudant, Inc.
