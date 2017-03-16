@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+project 'Project'
+
+def import_pods
+    use_frameworks!
+    pod "CDTDatastore", :path => "../"
+end
+
+target :Project do
+    platform :ios, '8.0'
+    import_pods
+end
