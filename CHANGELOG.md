@@ -1,6 +1,7 @@
 # CDTDatastore CHANGELOG
 
 ## Unreleased
+- [NEW] Added support for IAM authentication.
 - [IMPROVED] Added pre-emptive session renewal when within 5 minutes of expiry.
 - [FIXED] Replaced the GoogleToolboxForMac files with the CocoaPod subspec.
 
