@@ -68,9 +68,15 @@ def buildAndTest(nodeLabel, target, rakeEnv, encrypted) {
 }
 
 @NonCPS
+def getVersion(versionFile) {
+  def versionMatcher = versionFile =~ /#define CLOUDANT_SYNC_VERSION "(.*)"/
+  return versionMatcher[0][1]
+}
+
+@NonCPS
 def isReleaseVersion(versionFile) {
-  def versionMatcher = versionFile =~ /#define CLOUDANT_SYNC_VERSION \"(.*)\"/
-  return versionMatcher.matches() && !versionMatcher.group(1).toUpperCase(Locale.ENGLISH).contains("SNAPSHOT")
+  def versionMatcher = versionFile =~ /#define CLOUDANT_SYNC_VERSION "(.*)"/
+  return versionMatcher.matches() && !versionMatcher[0][1].toUpperCase(Locale.ENGLISH).contains("SNAPSHOT")
 }
 
 stage('Checkout') {
@@ -82,42 +88,12 @@ stage('Checkout') {
 }
 
 stage('BuildAndTest') {
-    def axes = [
-            ios: {
-                buildAndTest('ios', 'testios', 'IPHONE_DEST', 'no')
-                buildAndTest('ios', 'sample', 'IPHONE_DEST', 'no')
-            },
-            iosEncrypted: {
-                buildAndTest('ios', 'testios', 'IPHONE_DEST', 'yes')
-            },
-            macos: {
-                buildAndTest('macos', 'testosx', 'OSX_DEST', 'no')
-            },
-            macosEncrypted: {
-                buildAndTest('macos', 'testosx', 'OSX_DEST', 'yes')
-            }]
-    // Add replication acceptance tests for the master branch
-    if (env.BRANCH_NAME == "master") {
-      axes.putAll(
-                  iosRAT: {
-                      buildAndTest('ios', 'replicationacceptanceios', 'IPHONE_DEST', 'no')
-                  },
-                  iosRATEncrypted: {
-                      buildAndTest('ios', 'replicationacceptanceios', 'IPHONE_DEST', 'yes')
-                  },
-                  macosRAT: {
-                      buildAndTest('macos', 'replicationacceptanceosx', 'OSX_DEST', 'no')
-                  },
-                  macosRATEncrypted: {
-                      buildAndTest('macos', 'replicationacceptanceosx', 'OSX_DEST', 'yes')
-                  })
-    }
-    parallel(axes)
+    print "would build"
 }
 
 // Publish the master branch
 stage('Publish') {
-    if (env.BRANCH_NAME == "master") {
+
         node {
             checkout scm // re-checkout to be able to git tag
 
@@ -126,15 +102,23 @@ stage('Publish') {
 
             // if it is a release build then do the git tagging
             if (isReleaseVersion(versionFile)) {
-
+                def version = getVersion(versionFile)
+                def inMessage = false
                 // Read the CHANGELOG.md to get the tag message
                 tagMessage = ''
+                // find the message following the first "##" header
                 for (line in readFile('CHANGELOG.md').readLines()) {
-                    if (!''.equals(line)) {
+                    if (line =~ /^##/) {
+                        if (!inMessage) {
+                            inMessage = true
+                            continue
+                        } else {
+                            break
+                        }
+                    }
+                    if (inMessage) {
                         // append the line to the tagMessage
                         tagMessage = "${tagMessage}${line}\n"
-                    } else {
-                        break
                     }
                 }
 
@@ -142,18 +126,18 @@ stage('Publish') {
                 try {
                     // Awkward workaround until resolution of https://issues.jenkins-ci.org/browse/JENKINS-28335
                     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'github-token', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
-                        sh "git config user.email \"nomail@hursley.ibm.com\""
-                        sh "git config user.name \"Jenkins CI\""
-                        sh "git config credential.username ${env.GIT_USERNAME}"
-                        sh "git config credential.helper '!echo password=\$GIT_PASSWORD; echo'"
-                        sh "git tag -a ${version} -m '${tagMessage}'"
-                        sh "git push origin ${version}"
+                        sh "echo git config user.email \"nomail@hursley.ibm.com\""
+                        sh "echo git config user.name \"Jenkins CI\""
+                        sh "echo git config credential.username ${env.GIT_USERNAME}"
+                        sh "echo git config credential.helper '!echo password=\$GIT_PASSWORD; echo'"
+                        sh "echo git tag -a ${version} -m '${tagMessage}'"
+                        sh "echo git push origin ${version}"
                     }
                 } finally {
-                    sh "git config --unset credential.username"
-                    sh "git config --unset credential.helper"
+                    sh "echo git config --unset credential.username"
+                    sh "echo git config --unset credential.helper"
                 }
             }
         }
-    }
+
 }
