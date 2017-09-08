@@ -74,7 +74,7 @@ def getVersion(versionFile) {
 }
 
 def isReleaseVersion(version) {
-  return version.toUpperCase(Locale.ENGLISH).contains("SNAPSHOT")
+  return !version.toUpperCase(Locale.ENGLISH).contains("SNAPSHOT")
 }
 
 stage('Checkout') {
