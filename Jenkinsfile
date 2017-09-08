@@ -73,10 +73,8 @@ def getVersion(versionFile) {
   return versionMatcher[0][1]
 }
 
-@NonCPS
-def isReleaseVersion(versionFile) {
-  def versionMatcher = versionFile =~ /#define CLOUDANT_SYNC_VERSION "(.*)"/
-  return versionMatcher.matches() && !versionMatcher[0][1].toUpperCase(Locale.ENGLISH).contains("SNAPSHOT")
+def isReleaseVersion(version) {
+  return version.toUpperCase(Locale.ENGLISH).contains("SNAPSHOT")
 }
 
 stage('Checkout') {
@@ -97,12 +95,13 @@ stage('Publish') {
         node {
             checkout scm // re-checkout to be able to git tag
 
-            // read the version name
+            // read the version string
             def versionFile = readFile('CDTDatastore/Version.h').trim()
+            def version = getVersion(versionFile)
 
             // if it is a release build then do the git tagging
-            if (isReleaseVersion(versionFile)) {
-                def version = getVersion(versionFile)
+            if (isReleaseVersion(version)) {
+
                 def inMessage = false
                 // Read the CHANGELOG.md to get the tag message
                 tagMessage = ''
