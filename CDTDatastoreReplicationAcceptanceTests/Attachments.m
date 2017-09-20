@@ -125,14 +125,14 @@
 
     NSMutableDictionary *attachments = [NSMutableDictionary dictionary];
     NSString *content = @"blahblah";
-    NSData *data = [content dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *originalData = [content dataUsingEncoding:NSUTF8StringEncoding];
     NSString *name = @"attachment";
-    CDTAttachment *attachment = [[CDTUnsavedDataAttachment alloc] initWithData:data
+    CDTAttachment *attachment = [[CDTUnsavedDataAttachment alloc] initWithData:originalData
                                                                           name:name
                                                                           type:@"text/plain"];
     [attachments setObject:attachment forKey:name];
     
-    [originalAttachments setObject:data forKey:name];
+    [originalAttachments setObject:originalData forKey:name];
 
     rev.attachments = attachments;
     rev = [self.datastore createDocumentFromRevision:rev error:&error];
@@ -199,8 +199,8 @@
     XCTAssertEqual(remoteRevision.attachments.count, 1,@"Remote attachments were not equal to 1");
 
     CDTAttachment *remoteAttachment = remoteRevision.attachments.allValues[0];
-    
-    XCTAssertEqualObjects([@"blahblah" dataUsingEncoding:NSUTF8StringEncoding], [remoteAttachment dataFromAttachmentContent],@"Attachment content was not equal");
+
+    XCTAssertEqualObjects(originalData, [remoteAttachment dataFromAttachmentContent],@"Attachment content was not equal");
 }
 
 
@@ -353,27 +353,7 @@
     // Push to remote
     //
 
-    CDTReplicator *replicator =
-        [self.replicatorFactory onewaySourceDatastore:self.datastore targetURI:self.primaryRemoteDatabaseURL];
-
-    [replicator addObserver:self
-                 forKeyPath:@"tdReplicator"
-                    options:NSKeyValueObservingOptionNew
-                    context:NULL];
-
-    [replicator startWithError:nil];
-
-    // Time out test after 120 seconds
-    NSDate *start = [NSDate date];
-    while (replicator.isActive && ([[NSDate date] timeIntervalSinceDate:start] < 120)) {
-        [NSThread sleepForTimeInterval:1.0f];
-    }
-
-    if (replicator.isActive) {
-        XCTFail(@"Test timed out");
-    }
-
-    [replicator removeObserver:self forKeyPath:@"tdReplicator"];
+    [self pushToRemote];
 
     //
     // Checks
