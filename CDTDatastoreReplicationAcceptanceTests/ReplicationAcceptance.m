@@ -190,7 +190,7 @@
 -(CDTPullReplication *) testPullReplicator:(NSURL *)primaryRemoteDatabaseURL
                                     target:(CDTDatastore *)target {
     CDTPullReplication *pull = nil;
-    if(self.iamApiKey) {
+    if([self.iamApiKey length] != 0) {
         if(primaryRemoteDatabaseURL) {
             pull = [CDTPullReplication replicationWithSource:primaryRemoteDatabaseURL
                                                       target:target
@@ -216,7 +216,7 @@
 -(CDTPushReplication *) testPushReplicator:(CDTDatastore *)source
                                     target:(NSURL *)primaryRemoteDatabaseURL {
     CDTPushReplication *push = nil;
-    if(self.iamApiKey) {
+    if([self.iamApiKey length] != 0) {
         push = [CDTPushReplication replicationWithSource:source
                                                   target:primaryRemoteDatabaseURL
                                                IAMAPIKey:self.iamApiKey];
@@ -229,7 +229,7 @@
 
 -(CDTPushReplication *) testPushReplicator:(CDTDatastore *)source {
     CDTPushReplication *push = nil;
-    if(self.iamApiKey) {
+    if([self.iamApiKey length] != 0) {
         push = [CDTPushReplication replicationWithSource:source
                                                   target:self.primaryRemoteDatabaseURL
                                                IAMAPIKey:self.iamApiKey];
@@ -243,7 +243,7 @@
 - (void) testPullReplicationWithSource:(NSURL*) source
                  completionHandler:(void (^ __nonnull)(NSError* __nullable)) completionHandler
 {
-    if(self.iamApiKey) {
+    if([self.iamApiKey length] != 0) {
         [self.datastore pullReplicationWithSource:source IAMAPIKey:self.iamApiKey completionHandler:completionHandler];
     } else {
         [self.datastore pullReplicationWithSource:source username:nil password:nil completionHandler:completionHandler];
@@ -253,7 +253,7 @@
 - (void) testPushReplicationWithSource:(NSURL*) source
                      completionHandler:(void (^ __nonnull)(NSError* __nullable)) completionHandler
 {
-    if(self.iamApiKey) {
+    if([self.iamApiKey length] != 0) {
         [self.datastore pullReplicationWithSource:source IAMAPIKey:self.iamApiKey completionHandler:completionHandler];
     } else {
         [self.datastore pullReplicationWithSource:source username:nil password:nil completionHandler:completionHandler];
@@ -263,7 +263,7 @@
 - (void) testPushReplicationWithTarget:(NSURL*) target
                  completionHandler:(void (^ __nonnull)(NSError* __nullable)) completionHandler
 {
-    if(self.iamApiKey) {
+    if([self.iamApiKey length] != 0) {
         [self.datastore pushReplicationWithTarget:target IAMAPIKey:self.iamApiKey completionHandler:completionHandler];
     } else {
         [self.datastore pushReplicationWithTarget:target username:nil password:nil completionHandler:completionHandler];
@@ -933,7 +933,7 @@
     NSMutableDictionary *headers = [[NSMutableDictionary alloc] init];
     headers[@"accept"] = @"application/json";
     headers[ @"content-type"] = @"application/json";
-    if(self.iamApiKey) {
+    if([self.iamApiKey length] != 0) {
         headers[@"Authorization"] = [NSString stringWithFormat:@"Bearer %@",[self getIAMBearerToken]];
     }
     UNIHTTPJsonResponse *response = [[UNIRest get:^(UNISimpleRequest* request) {
@@ -1033,7 +1033,7 @@
     NSMutableDictionary *headers = [[NSMutableDictionary alloc] init];
     headers[@"accept"] = @"application/json";
     headers[ @"content-type"] = @"application/json";
-    if(self.iamApiKey) {
+    if([self.iamApiKey length] != 0) {
         headers[@"Authorization"] = [NSString stringWithFormat:@"Bearer %@",[self getIAMBearerToken]];
     }
     UNIHTTPJsonResponse *response = [[UNIRest get:^(UNISimpleRequest* request) {
@@ -1114,7 +1114,7 @@
     NSMutableDictionary *headers = [[NSMutableDictionary alloc] init];
     headers[@"accept"] = @"application/json";
     headers[@"content-type"] = @"application/json";
-    if(self.iamApiKey) {
+    if([self.iamApiKey length] != 0) {
         headers[@"Authorization"] = [NSString stringWithFormat:@"Bearer %@",[self getIAMBearerToken]];
     }
 
@@ -1705,7 +1705,7 @@
     NSMutableDictionary *headers = [[NSMutableDictionary alloc] init];
     headers[@"accept"] = @"application/json";
     headers[@"content-type"] = @"application/json";
-    if(self.iamApiKey) {
+    if([self.iamApiKey length] != 0) {
         headers[@"Authorization"] = [NSString stringWithFormat:@"Bearer %@",[self getIAMBearerToken]];
     }
 
@@ -1749,7 +1749,7 @@
     NSMutableDictionary *headers = [[NSMutableDictionary alloc] init];
     headers[@"accept"] = @"application/json";
     headers[@"content-type"] = @"application/json";
-    if(self.iamApiKey) {
+    if([self.iamApiKey length] != 0) {
         headers[@"Authorization"] = [NSString stringWithFormat:@"Bearer %@",[self getIAMBearerToken]];
     }
     UNIHTTPJsonResponse *response = [[UNIRest get:^(UNISimpleRequest* request) {
@@ -1864,7 +1864,7 @@
     };
 
     CDTURLSession *session = nil;
-    if(self.iamApiKey) {
+    if([self.iamApiKey length] != 0) {
         CDTIAMSessionCookieInterceptor *interceptor =
         [[CDTIAMSessionCookieInterceptor alloc] initWithAPIKey:self.iamApiKey];
         
@@ -1984,7 +1984,7 @@
 
 -(void) testURLConnectionChangeTrackerWithRealRemoteAndIAMKey
 {
-    if(self.iamApiKey) {
+    if([self.iamApiKey length] != 0) {
     
         __block BOOL changeTrackerStopped = NO;
         __block BOOL changeTrackerGotChanges = NO;

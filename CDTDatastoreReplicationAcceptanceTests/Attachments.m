@@ -95,7 +95,7 @@
     NSMutableDictionary *headers = [[NSMutableDictionary alloc] init];
     headers[@"accept"] = @"application/json";
     headers[@"If-Match"] = revId;
-    if(self.iamApiKey) {
+    if([self.iamApiKey length] != 0) {
         headers[@"Authorization"] = [NSString stringWithFormat:@"Bearer %@",[self getIAMBearerToken]];
     }
     UNIHTTPJsonResponse* response = [[UNIRest delete:^(UNISimpleRequest* request) {
@@ -110,7 +110,7 @@
 #pragma mark Tests
 -(void)testSavedHttpAttachmentWithRemote
 {
-    if(self.iamApiKey) {
+    if([self.iamApiKey length] != 0) {
         NSLog(@"IAM API key enabled, skipping test");
     } else {
         //
@@ -169,7 +169,7 @@
         docURL = [docURLComponents URL];
         NSMutableDictionary *headers = [[NSMutableDictionary alloc] init];
         headers[@"accept"] = @"application/json";
-        if(self.iamApiKey) {
+        if([self.iamApiKey length] != 0) {
             headers[@"Authorization"] = [NSString stringWithFormat:@"Bearer %@",[self getIAMBearerToken]];
         }
         UNIHTTPJsonResponse* response = [[UNIRest get:^(UNISimpleRequest* request) {
@@ -810,7 +810,7 @@
     // Should end up with revpos > generation number
     NSMutableDictionary *headers = [[NSMutableDictionary alloc] init];
     headers[@"accept"] = @"application/json";
-    if(self.iamApiKey) {
+    if([self.iamApiKey length] != 0) {
         headers[@"Authorization"] = [NSString stringWithFormat:@"Bearer %@",[self getIAMBearerToken]];
     }
     NSDictionary* json = [[UNIRest get:^(UNISimpleRequest* request) {
