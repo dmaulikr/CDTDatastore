@@ -123,7 +123,7 @@ stage('BuildAndTest') {
     if (env.BRANCH_NAME == "master" || env.BRANCH_NAME == "iam-testing") {
       axes.putAll(
                   iosIamRAT: {
-                      //buildAndTest('ios', 'replicationacceptanceios', 'IPHONE_DEST', 'no', 'yes')
+                      buildAndTest('ios', 'replicationacceptanceios', 'IPHONE_DEST', 'no', 'yes')
                   },
                   iosRAT: {
                       buildAndTest('ios', 'replicationacceptanceios', 'IPHONE_DEST', 'no', 'no')
