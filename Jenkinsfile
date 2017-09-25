@@ -101,30 +101,32 @@ stage('Checkout') {
 stage('BuildAndTest') {
     def axes = [
             ios: {
-                //buildAndTest('ios', 'testios', 'IPHONE_DEST', 'no', 'no')
-                buildAndTest('ios', 'testios', 'IPHONE_DEST', 'no', 'yes')
+                buildAndTest('ios', 'testios', 'IPHONE_DEST', 'no', 'no')
 
-                //buildAndTest('ios', 'sample', 'IPHONE_DEST', 'no', 'no')
-                //buildAndTest('ios', 'sample', 'IPHONE_DEST', 'no', 'yes')
+                buildAndTest('ios', 'sample', 'IPHONE_DEST', 'no', 'no')
             },
             iosEncrypted: {
-                //buildAndTest('ios', 'testios', 'IPHONE_DEST', 'yes', 'no')
+                buildAndTest('ios', 'testios', 'IPHONE_DEST', 'yes', 'no')
+            },
+            iosIam: {
+                buildAndTest('ios', 'testios', 'IPHONE_DEST', 'yes', 'yes')
+                buildAndTest('ios', 'sample', 'IPHONE_DEST', 'no', 'yes')
             },
             macos: {
-                //buildAndTest('macos', 'testosx', 'OSX_DEST', 'no', 'no')
+                buildAndTest('macos', 'testosx', 'OSX_DEST', 'no', 'no')
             },
             macosEncrypted: {
-                //buildAndTest('macos', 'testosx', 'OSX_DEST', 'yes', 'no')
+                buildAndTest('macos', 'testosx', 'OSX_DEST', 'yes', 'no')
             }]
     // Add replication acceptance tests for the master branch
     // TODO remove after RA testing on test-branch
     if (env.BRANCH_NAME == "master" || env.BRANCH_NAME == "iam-testing") {
       axes.putAll(
                   iosIamRAT: {
-                      buildAndTest('ios', 'replicationacceptanceios', 'IPHONE_DEST', 'no', 'yes')
+                      //buildAndTest('ios', 'replicationacceptanceios', 'IPHONE_DEST', 'no', 'yes')
                   },
                   iosRAT: {
-                      buildAndTest('ios', 'replicationacceptanceios', 'IPHONE_DEST', 'no', 'no')
+                      //buildAndTest('ios', 'replicationacceptanceios', 'IPHONE_DEST', 'no', 'no')
                   })
     }
     parallel(axes)
