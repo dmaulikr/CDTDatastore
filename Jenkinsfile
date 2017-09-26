@@ -166,12 +166,13 @@ stage('BuildAndTest') {
     // TODO remove after RA testing on test-branch
     if (env.BRANCH_NAME == "master" || env.BRANCH_NAME == "iam-testing") {
       axes.putAll(
-                  iosRAT: {
-                      buildAndTest('ios', 'replicationacceptanceios', 'IPHONE_DEST', 'no', 'no')
-                  },
                   iosWithIamRAT: {
                       iamBuildAndTest('ios', 'replicationacceptanceios', 'IPHONE_DEST', 'no')
+                  },
+                  iosRAT: {
+                      buildAndTest('ios', 'replicationacceptanceios', 'IPHONE_DEST', 'no', 'no')
                   })
+
     }
     parallel(axes)
 }
