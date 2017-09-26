@@ -30,6 +30,50 @@ def podfile(podfileDir) {
     }
 }
 
+def iamBuildAndTest(nodeLabel, target, rakeEnv, encrypted) {
+    node(nodeLabel) {
+        // Clean the directory before un-stashing (removes old logs)
+        deleteDir()
+
+        // Unstash the source on this node
+        unstash name: 'source'
+
+        // Build and test
+        try {
+            def credsId = ''
+            def credsPass = ''
+            def credsUser = ''
+            envVariables = ["${rakeEnv}=${env.DEST_PLATFORM}", "TEST_COUCH_HOST=smithsz-test03.cloudant.com", "TEST_COUCH_PORT=443", "TEST_COUCH_HTTP=https", "TEST_COUCH_N_DOCS=20", "TEST_COUCH_LARGE_REV_TREE_SIZE=10"]
+            credsId = 'iam-testy023'
+            credsPass = 'TEST_COUCH_IAM_API_KEY'
+            credsUser = 'TEST_COUCH_USERNAME'
+            
+            if (encrypted == 'yes') {
+                envVariables.add('encrypted=yes')
+            }
+            withEnv(envVariables) {
+                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: credsId, usernameVariable: credsUser, passwordVariable: credsPass]]) {
+                    // Install or update the pods
+                    if (target == 'sample') {
+                        podfile('Project')
+                    } else {
+                        podfile('.')
+                    }
+                    sh "rake ${target}"
+                }
+            }
+        } finally {
+            // Note the sample build has no junit results or CDT*.log
+            if (target != 'sample') {
+                // Load the test results
+                junit 'build/reports/junit.xml'
+                // Archive the complete log in case more debugging needed
+                archiveArtifacts artifacts: '*CDTDatastore*.log'
+            }
+        }
+    }
+}
+
 def buildAndTest(nodeLabel, target, rakeEnv, encrypted, iam) {
     node(nodeLabel) {
         // Clean the directory before un-stashing (removes old logs)
@@ -122,9 +166,11 @@ stage('BuildAndTest') {
     // TODO remove after RA testing on test-branch
     if (env.BRANCH_NAME == "master" || env.BRANCH_NAME == "iam-testing") {
       axes.putAll(
-                  iosWithIamRAT: {
-                      buildAndTest('ios', 'replicationacceptanceios', 'IPHONE_DEST', 'no', 'yes')
+                  iosRAT: {
                       buildAndTest('ios', 'replicationacceptanceios', 'IPHONE_DEST', 'no', 'no')
+                  },
+                  iosWithIamRAT: {
+                      iamBuildAndTest('ios', 'replicationacceptanceios', 'IPHONE_DEST', 'no')
                   })
     }
     parallel(axes)
