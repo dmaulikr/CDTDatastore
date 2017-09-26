@@ -124,7 +124,7 @@ stage('BuildAndTest') {
       axes.putAll(
                   iosWithIamRAT: {
                       buildAndTest('ios', 'replicationacceptanceios', 'IPHONE_DEST', 'no', 'yes')
-                  }
+                  })
 
     }
     parallel(axes)
